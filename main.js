@@ -41,6 +41,8 @@ class ProductManager{
 
 const products = new ProductManager
 
+// TESTING
+
 // Llamamos a getProduct por primera vez y devuelve un []
 console.log(products.getProduct())
 
