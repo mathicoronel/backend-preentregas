@@ -42,13 +42,16 @@ class ProductManager{
         return console.log(readResponse)
     }
 
-    getProductById(id){
-        if(!this.products.find((p) => p.id === id)){
-            console.log("Producto no encontrado")
-        } else{
-            this.products.find((p) => p.id === id)
-        }
+    async getProductById(id) {
+    try {
+        const products = await this.readProduct();
+        const product = products.find(p => p.id === id);
+        return product || null;
+    } catch (error) {
+        console.error("Error al obtener el producto por ID:", error);
+        return null;
     }
+}
 
     async updateProduct({ id, ...product }) {
         if (!this.products.some(p => p.id === id)) {
@@ -101,24 +104,42 @@ const products = new ProductManager
 
 // TESTING DESAFIO 2
 
-async function test() {
-    const products = new ProductManager()
+// async function test() {
+//     const products = new ProductManager()
     
-    // Agregar un producto
-    await products.addProduct("Producto prueba", "Este es un producto prueba", 200, "Sin imagen", "abc123", 25)
-    await products.addProduct("Producto prueba2", "Este es un producto prueba2", 400, "Sin imagen", "abc456", 25)
+//     // Agregar un producto
+//     await products.addProduct("Producto prueba", "Este es un producto prueba", 200, "Sin imagen", "abc123", 25)
+//     await products.addProduct("Producto prueba2", "Este es un producto prueba2", 400, "Sin imagen", "abc456", 25)
     
-    // Obtener los productos
-    console.log(await products.getProduct())
+//     // Obtener los productos
+//     console.log(await products.getProduct())
 
-    // Obtener un producto por su ID
-    console.log(products.getProductById(1))
+//     // Obtener un producto por su ID
+//     console.log(products.getProductById(1))
     
-    // Actualizar un producto
-    await products.updateProduct({ id: 0, title: "Nuevo título", description: "Nueva descripcion", price: 300, thumbnail: "sin imagen", code: "abc123", stock: 25 })
+//     // Actualizar un producto
+//     await products.updateProduct({ id: 0, title: "Nuevo título", description: "Nueva descripcion", price: 300, thumbnail: "sin imagen", code: "abc123", stock: 25 })
     
-    // Eliminar un producto
-    await products.deleteProduct(0)
+//     // Eliminar un producto
+//     await products.deleteProduct(0)
+// }
+
+// test()
+
+async function test() {
+    await products.addProduct("Silla", "Silla de madera", 200, "Sin imagen", "a123", 10)
+    await products.addProduct("Mesa", "Mesa de madera", 250, "Sin imagen", "b123", 5)
+    await products.addProduct("Platos", "Platos de plástico", 150, "Sin imagen", "c123", 6)
+    await products.addProduct("Sillón", "Sillón color gris", 550, "Sin imagen", "d123", 12)
+    await products.addProduct("Cama", "Cama de 2 plazas", 450, "Sin imagen", "e123", 8)
+    await products.addProduct("Vasos", "6 vasos de vidrio", 80, "Sin imagen", "f123", 10)
+    await products.addProduct("Televisor", "Televisor de 40 pulgadas", 250, "Sin imagen", "g123", 5)
+    await products.addProduct("Placard", "Placard de madera de 2 puertas", 300, "Sin imagen", "h123", 5)
+    await products.addProduct("Cubiertos", "Set de 6 tenedores y 6 cuchillos", 100, "Sin imagen", "i123", 15)
+    await products.addProduct("Heladera", "Heladera de 2 puertas color negro", 600, "Sin imagen", "j123", 4)
+    await products.addProduct("Lavarropas", "Lavarropas de 10kg", 500, "Sin imagen", "k123", 4)
 }
 
-test()
+// test()
+
+module.exports = ProductManager

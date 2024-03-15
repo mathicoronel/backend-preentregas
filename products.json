@@ -1,1 +1,101 @@
-[{"id":1,"title":"Producto prueba2","description":"Este es un producto prueba2","price":400,"thumbnail":"Sin imagen","code":"abc456","stock":25}]
+[
+  {
+    "id": 0,
+    "title": "Silla",
+    "description": "Silla de madera",
+    "price": 200,
+    "thumbnail": "Sin imagen",
+    "code": "a123",
+    "stock": 10
+  },
+  {
+    "id": 1,
+    "title": "Mesa",
+    "description": "Mesa de madera",
+    "price": 250,
+    "thumbnail": "Sin imagen",
+    "code": "b123",
+    "stock": 5
+  },
+  {
+    "id": 2,
+    "title": "Platos",
+    "description": "Platos de plástico",
+    "price": 150,
+    "thumbnail": "Sin imagen",
+    "code": "c123",
+    "stock": 6
+  },
+  {
+    "id": 3,
+    "title": "Sillón",
+    "description": "Sillón color gris",
+    "price": 550,
+    "thumbnail": "Sin imagen",
+    "code": "d123",
+    "stock": 12
+  },
+  {
+    "id": 4,
+    "title": "Cama",
+    "description": "Cama de 2 plazas",
+    "price": 450,
+    "thumbnail": "Sin imagen",
+    "code": "e123",
+    "stock": 8
+  },
+  {
+    "id": 5,
+    "title": "Vasos",
+    "description": "6 vasos de vidrio",
+    "price": 80,
+    "thumbnail": "Sin imagen",
+    "code": "f123",
+    "stock": 10
+  },
+  {
+    "id": 6,
+    "title": "Televisor",
+    "description": "Televisor de 40 pulgadas",
+    "price": 250,
+    "thumbnail": "Sin imagen",
+    "code": "g123",
+    "stock": 5
+  },
+  {
+    "id": 7,
+    "title": "Placard",
+    "description": "Placard de madera de 2 puertas",
+    "price": 300,
+    "thumbnail": "Sin imagen",
+    "code": "h123",
+    "stock": 5
+  },
+  {
+    "id": 8,
+    "title": "Cubiertos",
+    "description": "Set de 6 tenedores y 6 cuchillos",
+    "price": 100,
+    "thumbnail": "Sin imagen",
+    "code": "i123",
+    "stock": 15
+  },
+  {
+    "id": 9,
+    "title": "Heladera",
+    "description": "Heladera de 2 puertas color negro",
+    "price": 600,
+    "thumbnail": "Sin imagen",
+    "code": "j123",
+    "stock": 4
+  },
+  {
+    "id": 10,
+    "title": "Lavarropas",
+    "description": "Lavarropas de 10kg",
+    "price": 500,
+    "thumbnail": "Sin imagen",
+    "code": "k123",
+    "stock": 4
+  }
+]
